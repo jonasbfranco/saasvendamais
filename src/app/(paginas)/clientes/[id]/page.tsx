@@ -1,28 +1,27 @@
+
 import BotaoVoltar from "@/app/components/shared/BotaoVoltar";
 import Pagina from "@/app/components/template/Pagina";
 import Backend from "@/backend";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
-/* interface PageProps {
-    params: {
-      id: string
-    }
-} */
+// 1. Defina o tipo dos parâmetros corretamente
+type PageParams = {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
-export default async function PaginaDetalhes({ params }: PageProps<{ id: string }>) {
-// export default async function PaginaDetalhes({ params }: PageProps<{ id: string }>) {
-
-// export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
-    const { id } = await params
-    
-    // Garante que os params estão resolvidos
-    // const { id } = await Promise.resolve(params);
+export default async function PaginaDetalhes({ params }: PageParams) {
+  // 2. Acesse os parâmetros diretamente (sem await)
+    const { id } = params;
+  
     const cliente = await Backend.clientes.obterPorId(id);
     if (!cliente) return notFound();
 
+    // ... restante do seu código permanece EXATAMENTE igual
     const vendas = await Backend.vendas.obterVendasClientes(String(cliente.id));
     const receitas = await Backend.receitas.obterReceitasClientes(String(cliente.id));
+
 
     const totalVendas = vendas.reduce((soma, venda) => soma + venda.valor!, 0);
     const totalReceitas = receitas.reduce((soma, receita) => soma + receita.valor!, 0);
