@@ -17,7 +17,9 @@ export interface FormularioReceitaProps {
 
 export default function FormularioReceita(props: FormularioReceitaProps) {
 
-    const [_clientes, setClientes] = useState<Cliente[]>([]);
+    const [clientes, setClientes] = useState<Cliente[]>([]);
+
+    console.log(clientes)
 
     /* function formatarDataInput(data?: Date) {
         if (!data) return '';
