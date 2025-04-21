@@ -1,18 +1,15 @@
 import BotaoVoltar from "@/app/components/shared/BotaoVoltar";
 import Pagina from "@/app/components/template/Pagina";
 import Backend from "@/backend";
+import { PageProps } from '@/types/next';
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
-interface PageProps {
-    params: {
-      id: string;
-    };
-  }
-  export default async function PaginaDetalhes({ params }: PageProps) {
+
+export default async function PaginaDetalhes({ params }: PageProps<{ id: string }>) {
 
 // export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
-    const { id } = params
+    const { id } = await params
     
     // Garante que os params estão resolvidos
     // const { id } = await Promise.resolve(params);
