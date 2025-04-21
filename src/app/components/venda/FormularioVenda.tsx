@@ -114,7 +114,7 @@ export default function FormularioVenda(props: FormularioVendaProps) {
                     placeholder="Ex: 1200"
                     value={props.venda?.valor ?? ""}
                     onChange={
-                        (e) => props.onChange?.({...props.venda, valor: e.target.value})
+                        (e) => props.onChange?.({...props.venda, valor: parseFloat(e.target.value)})
                     }
                 />
                 <InputTexto
