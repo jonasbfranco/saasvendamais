@@ -55,10 +55,25 @@ export default class RepositorioReceita {
         return receita as Receita[];
     }
 
-    static async obterPorId(id: string): Promise<Receita> {
+    /* static async obterPorId(id: string): Promise<Receita> {
         const receita = await this.db.receita.findUnique({
             where: { id: parseInt(id) },
         });
+
+        return receita as Receita;
+    } */
+
+    static async obterPorId(id: string): Promise<Receita> {
+        const receita = await this.db.receita.findUnique({
+            where: { id: parseInt(id) },
+            include: {
+                cliente: true,
+            },
+        });
+
+        if (!receita) {
+            throw new Error("Receita não encontrada.");
+        }
 
         return receita as Receita;
     }
