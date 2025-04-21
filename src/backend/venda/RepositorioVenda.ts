@@ -23,7 +23,7 @@ export default class RepositorioVenda {
 
         // console.log("upsert where:", identificador);
 
-        const { id, cliente, ...dadosVenda } = venda;
+        const { _id, _cliente, ...dadosVenda } = venda;
 
         // Converte clienteId e valor para os tipos esperados
         const dadosTratados = {

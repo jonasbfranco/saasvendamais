@@ -16,7 +16,7 @@ export default class RepositorioReceita {
 
         // console.log("upsert where:", identificador);
 
-        const { id, cliente, ...dadosReceita } = receita;
+        const { _id, _cliente, ...dadosReceita } = receita;
 
         // Converte clienteId e valor para os tipos esperados
         const dadosTratados = {

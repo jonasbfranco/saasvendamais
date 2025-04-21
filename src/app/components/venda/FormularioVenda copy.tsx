@@ -17,10 +17,10 @@ export default function FormularioVenda(props: FormularioVendaProps) {
 
     
 
-    function formatarDataInput(data?: Date) {
+    /* function formatarDataInput(data?: Date) {
         if (!data) return '';
         return data.toISOString().split('T')[0];
-    }
+    } */
 
     function formatarDataHoraInput(data?: Date | string): string {
         if (!data) return "";

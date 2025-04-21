@@ -2,6 +2,7 @@ import { Cliente } from "@/core/model/Cliente";
 import { PrismaClient } from "@prisma/client";
 
 export default class RepositorioCliente {
+    
     private static db: PrismaClient = new PrismaClient();
 
     static async salvar(cliente: Cliente): Promise<Cliente> {
@@ -54,5 +55,4 @@ export default class RepositorioCliente {
         await this.db.cliente.delete({ where: { id: parseInt(id) } });
     }
 
-    await db.$disconnect()
 }

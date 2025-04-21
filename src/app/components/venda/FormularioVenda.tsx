@@ -4,7 +4,6 @@ import { Venda } from "@/core/model/Venda";
 import InputTexto from "../shared/InputTexto";
 import { useEffect, useState } from "react";
 import { Cliente } from "@/core/model/Cliente";
-import { PrismaClient } from "@prisma/client";
 import SelectCliente from "@/backend/venda/selectCliente";
 
 
@@ -19,12 +18,12 @@ export interface FormularioVendaProps {
 
 export default function FormularioVenda(props: FormularioVendaProps) {
 
-    const [clientes, setClientes] = useState<Cliente[]>([]);
+    const [_clientes, setClientes] = useState<Cliente[]>([]);
 
-    function formatarDataInput(data?: Date) {
+    /* function formatarDataInput(data?: Date) {
         if (!data) return '';
         return data.toISOString().split('T')[0];
-    }
+    } */
 
 
     useEffect(() => {
