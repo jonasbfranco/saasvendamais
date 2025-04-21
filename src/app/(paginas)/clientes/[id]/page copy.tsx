@@ -15,8 +15,8 @@ export default async function PaginaDetalhes({ params }: { params: { id: string 
     if (!cliente) return notFound();
 
 
-    const vendas = await Backend.vendas.obterVendasClientes(cliente.id);
-    const receitas = await Backend.receitas.obterReceitasClientes(cliente.id);
+    const vendas = await Backend.vendas.obterVendasClientes(String(cliente.id));
+    const receitas = await Backend.receitas.obterReceitasClientes(String(cliente.id));
 
     console.log("Vendas:", vendas);
     console.log("Receitas:", receitas);
