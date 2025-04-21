@@ -25,10 +25,11 @@ export default function useReceitas() {
         //Excluir do banco de dados
         if (!receita || !receita.id) return;
         await Backend.receitas.excluir(receita.id)
-        const receita = await Backend.receitas.obter()
-        setReceita(receitas)
+        const novasReceitas = await Backend.receitas.obter()
+        setReceita(novasReceitas)
         setReceita(null)
     };
+
 
     return {
         receitas,
