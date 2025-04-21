@@ -10,14 +10,7 @@ import { FaWhatsapp } from "react-icons/fa";
     }
 } */
 
-export default async function PaginaDetalhes({ 
-    params 
-  }: { 
-    params: { id: string } 
-  }) {
-
-
-
+export default async function PaginaDetalhes({ params }: PageProps<{ id: string }>) {
 // export default async function PaginaDetalhes({ params }: PageProps<{ id: string }>) {
 
 // export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
