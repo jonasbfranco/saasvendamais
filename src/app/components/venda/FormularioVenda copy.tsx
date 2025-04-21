@@ -44,7 +44,7 @@ export default function FormularioVenda(props: FormularioVendaProps) {
                 placeholder="Ex: Maria de Nazaré"
                 value={props.venda?.clienteId ?? ""}
                 onChange={
-                    (e) => props.onChange?.({...props.venda, clienteId: e.target.value})
+                    (e) => props.onChange?.({...props.venda, clienteId: Number(e.target.value)})
                 }
             />
             <InputTexto
