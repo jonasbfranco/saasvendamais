@@ -1,8 +1,8 @@
-// src/types/next.d.ts
-import { Metadata, ResolvingMetadata } from 'next'
+// src/types/next.d.ts (crie este arquivo se não existir)
+import 'next'
 
 declare module 'next' {
-  export interface PageProps<T = {}> {
+  interface PageProps<T = {}> {
     params: T
     searchParams: { [key: string]: string | string[] | undefined }
   }
