@@ -44,12 +44,12 @@ type DataFormatadaProps = {
 
 
   import { TZDate } from "@date-fns/tz";
-  import { addHours } from "date-fns";
+  //import { addHours } from "date-fns";
   
   import { format } from "date-fns";
   import { TZDate } from "@date-fns/tz";
   import { ptBR } from "date-fns/locale";
-  import { MdDataObject } from "react-icons/md";
+  //import { MdDataObject } from "react-icons/md";
   
   type DataFormatadaProps = {
     data: Date | string | null | undefined;

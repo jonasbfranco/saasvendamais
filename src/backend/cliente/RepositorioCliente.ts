@@ -15,7 +15,11 @@ export default class RepositorioCliente {
                 ? { id: cliente.id }
                 : { whatsapp: cliente.whatsapp };
 
-            const { _id, ...dadosCliente } = cliente;
+            const { id, ...dadosCliente } = cliente;
+
+            console.log(id)
+
+
 
             const clienteSalvo = await db.cliente.upsert({
                 where: identificador,

@@ -6,7 +6,6 @@ import { PiShoppingCartLight } from "react-icons/pi";
 import { IoWalletOutline } from "react-icons/io5";
 import { IoIosLogOut } from "react-icons/io";
 import MenuItem from "./MenuItem";
-import { UserSession } from "./UserSession";
 import logoutAction from "@/app/(auth)/(logout)/logoutAction";
 
 

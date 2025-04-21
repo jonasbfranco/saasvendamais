@@ -17,12 +17,12 @@ export interface FormularioReceitaProps {
 
 export default function FormularioReceita(props: FormularioReceitaProps) {
 
-    const [clientes, setClientes] = useState<Cliente[]>([]);
+    const [_clientes, setClientes] = useState<Cliente[]>([]);
 
-    function formatarDataInput(data?: Date) {
+    /* function formatarDataInput(data?: Date) {
         if (!data) return '';
         return data.toISOString().split('T')[0];
-    }
+    } */
 
 
     useEffect(() => {

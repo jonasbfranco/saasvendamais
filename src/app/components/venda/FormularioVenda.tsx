@@ -18,7 +18,9 @@ export interface FormularioVendaProps {
 
 export default function FormularioVenda(props: FormularioVendaProps) {
 
-    const [_clientes, setClientes] = useState<Cliente[]>([]);
+    const [clientes, setClientes] = useState<Cliente[]>([]);
+
+    console.log(clientes)
 
     /* function formatarDataInput(data?: Date) {
         if (!data) return '';

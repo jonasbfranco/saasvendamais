@@ -24,6 +24,8 @@ export default class RepositorioCliente {
 
         const { id, ...dadosCliente } = cliente;
 
+        console.log(id)
+
         return await this.db.cliente.upsert({
             where: identificador,
             update: dadosCliente,

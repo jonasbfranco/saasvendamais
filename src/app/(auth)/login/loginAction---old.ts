@@ -4,7 +4,7 @@ import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 
-export default async function loginAction(_prevState: any, formData: FormData) {
+export default async function loginAction(_prevState: unknown, formData: FormData) {
   try {
 
     await signIn("credentials", 
