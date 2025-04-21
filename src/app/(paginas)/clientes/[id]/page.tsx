@@ -5,7 +5,7 @@ import Backend from "@/backend";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
-interface PageProps {
+interface Props {
     params: {
       id: string
     }
