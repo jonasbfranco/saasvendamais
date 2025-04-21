@@ -11,7 +11,8 @@ type PageParams = {
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-export default async function PaginaDetalhes({ params }: PageParams) {
+
+export default async function PaginaDetalhes({ params }: PageParams<{ id: string }>) {
   // 2. Acesse os parâmetros diretamente (sem await)
     const { id } = params;
   
