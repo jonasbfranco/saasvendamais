@@ -1,6 +1,7 @@
 
 // import clientes from "@/app/data/constants/clientes"; // Lista criada pelo chatGPT
 
+import { Venda } from "@/core/model/Venda";
 import LinhaVenda from "./LinhaVenda";
 
 
