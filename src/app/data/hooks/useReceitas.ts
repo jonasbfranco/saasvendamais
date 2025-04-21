@@ -24,7 +24,7 @@ export default function useReceitas() {
     async function excluir() {
         //Excluir do banco de dados
         if (!receita || !receita.id) return;
-        await Backend.receitas.excluir(receita.id)
+        await Backend.receitas.excluir(String(receita.id))
         const novasReceitas = await Backend.receitas.obter()
         setReceita(novasReceitas)
         setReceita(null)
