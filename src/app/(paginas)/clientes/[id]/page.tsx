@@ -1,15 +1,18 @@
+export const dynamic = "force-dynamic";
+
 import BotaoVoltar from "@/app/components/shared/BotaoVoltar";
 import Pagina from "@/app/components/template/Pagina";
 import Backend from "@/backend";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
+
 export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
     const cliente = await Backend.clientes.obterPorId(params.id);
     if (!cliente) return notFound();
 
-    const vendas = await Backend.vendas.obterVendasClientes(cliente.id);
-    const receitas = await Backend.receitas.obterReceitasClientes(cliente.id);
+    const vendas = await Backend.vendas.obterVendasClientes(String(cliente.id));
+    const receitas = await Backend.receitas.obterReceitasClientes(String(cliente.id));
 
     const totalVendas = vendas.reduce((soma, venda) => soma + venda.valor!, 0);
     const totalReceitas = receitas.reduce((soma, receita) => soma + receita.valor!, 0);
