@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import BotaoVoltar from "@/app/components/shared/BotaoVoltar";
 import Pagina from "@/app/components/template/Pagina";
 import Backend from "@/backend";
@@ -7,8 +5,12 @@ import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
 
+
 export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
-    const cliente = await Backend.clientes.obterPorId(params.id);
+    
+    // Garante que os params estão resolvidos
+    const { id } = await Promise.resolve(params);
+    const cliente = await Backend.clientes.obterPorId(id);
     if (!cliente) return notFound();
 
     const vendas = await Backend.vendas.obterVendasClientes(String(cliente.id));
