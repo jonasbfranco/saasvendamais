@@ -36,6 +36,9 @@ export default class RepositorioReceita {
             where: identificador,
             update: dadosTratados,
             create: dadosTratados,
+            include: {
+                cliente: true, // <-- Adiciona o relacionamento!
+              }
         });
     }
 
