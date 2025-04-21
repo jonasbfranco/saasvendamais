@@ -3,17 +3,21 @@ import Pagina from "@/app/components/template/Pagina";
 import Backend from "@/backend";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
+import { Metadata, ResolvingMetadata } from 'next'
+import { PageProps } from '@/types/next'
 
 interface PageProps {
     params: Promise<{ id: string }>;
     searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default async function PaginaDetalhes({ params }: PageProps) {
+export default async function PaginaDetalhes({ params }: PageProps<{ id: string }>) {
+// export default async function PaginaDetalhes({ params }: PageProps) {
 // export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
+    const { id } = params
     
     // Garante que os params estão resolvidos
-    const { id } = await Promise.resolve(params);
+    // const { id } = await Promise.resolve(params);
     const cliente = await Backend.clientes.obterPorId(id);
     if (!cliente) return notFound();
 
