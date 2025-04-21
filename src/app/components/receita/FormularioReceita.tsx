@@ -4,6 +4,7 @@ import InputTexto from "../shared/InputTexto";
 import { useEffect, useState } from "react";
 import SelectCliente from "@/backend/venda/selectCliente";
 import { Receita } from "@/core/model/Receita";
+import { Cliente } from "@/core/model/Cliente";
 
 
 export interface FormularioReceitaProps {
