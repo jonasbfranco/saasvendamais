@@ -5,11 +5,11 @@ import type { PageProps } from 'next'
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
-interface PageProps {
+/* interface PageProps {
     params: {
       id: string
     }
-}
+} */
 
 
 export default async function PaginaDetalhes({ params }: PageProps<{ id: string }>) {
