@@ -12,7 +12,7 @@ interface PageProps {
 }
 
 export default async function PaginaDetalhes({ params }: PageProps<{ id: string }>) {
-// export default async function PaginaDetalhes({ params }: PageProps) {
+
 // export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
     const { id } = params
     
