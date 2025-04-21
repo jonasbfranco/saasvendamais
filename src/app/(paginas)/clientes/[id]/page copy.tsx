@@ -4,14 +4,9 @@ import Backend from "@/backend";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
-type Params = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function PaginaDetalhes({ params }: Params) {
-  const cliente = await Backend.clientes.obterPorId(params.id);
+export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
+  const { id } = params;
+  const cliente = await Backend.clientes.obterPorId(id);
   if (!cliente) return notFound();
 
   const vendas = await Backend.vendas.obterVendasClientes(String(cliente.id));
@@ -37,11 +32,7 @@ export default async function PaginaDetalhes({ params }: Params) {
               <span className="text-sm text-zinc-400">WhatsApp:</span>
               <div className="flex items-center gap-2 text-green-300 hover:text-green-400 transition">
                 <FaWhatsapp size={16} />
-                <a
-                  href={`https://wa.me/${cliente.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={`https://wa.me/${cliente.whatsapp}`} target="_blank">
                   {cliente.whatsapp}
                 </a>
               </div>
