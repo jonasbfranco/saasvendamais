@@ -1,7 +1,7 @@
 // import { DollarSign } from "lucide-react";
 
 type ValorFormatadoProps = {
-  valor: number;
+  valor: number | null;
 };
 
 export default function ValorFormatado({ valor }: ValorFormatadoProps) {
