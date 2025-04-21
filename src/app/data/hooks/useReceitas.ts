@@ -26,7 +26,7 @@ export default function useReceitas() {
         if (!receita || !receita.id) return;
         await Backend.receitas.excluir(String(receita.id))
         const novasReceitas = await Backend.receitas.obter()
-        setReceita(novasReceitas)
+        setReceitas(novasReceitas)
         setReceita(null)
     };
 
