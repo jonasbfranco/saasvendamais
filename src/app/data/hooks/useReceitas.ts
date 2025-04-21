@@ -21,6 +21,10 @@ export default function useReceitas() {
     };
 
 
+    
+    
+    
+    
     async function excluir() {
         //Excluir do banco de dados
         if (!receita || !receita.id) return;
