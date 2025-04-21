@@ -4,9 +4,13 @@ import Backend from "@/backend";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
+interface PageProps {
+    params: Promise<{ id: string }>;
+    searchParams?: { [key: string]: string | string[] | undefined };
+}
 
-
-export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
+export default async function PaginaDetalhes({ params }: PageProps) {
+// export default async function PaginaDetalhes({ params }: { params: { id: string } }) {
     
     // Garante que os params estão resolvidos
     const { id } = await Promise.resolve(params);
