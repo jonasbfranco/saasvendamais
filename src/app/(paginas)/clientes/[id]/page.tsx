@@ -1,23 +1,14 @@
-
 import BotaoVoltar from "@/app/components/shared/BotaoVoltar";
 import Pagina from "@/app/components/template/Pagina";
 import Backend from "@/backend";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
-
-// 1. Defina o tipo dos parâmetros corretamente
-type PageParams = {
-  params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
-
+import { PageParams } from 'next';
 
 export default async function PaginaDetalhes({ params }: PageParams<{ id: string }>) {
-  // 2. Acesse os parâmetros diretamente (sem await)
-    const { id } = params;
-  
-    const cliente = await Backend.clientes.obterPorId(id);
-    if (!cliente) return notFound();
+  const { id } = params;
+  const cliente = await Backend.clientes.obterPorId(id);
+  if (!cliente) return notFound();
 
     // ... restante do seu código permanece EXATAMENTE igual
     const vendas = await Backend.vendas.obterVendasClientes(String(cliente.id));

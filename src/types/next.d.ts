@@ -1,9 +1,9 @@
-// src/types/next.d.ts (crie este arquivo)
+// src/types/next.d.ts
 import 'next';
 
 declare module 'next' {
-  interface PageProps<T = any> {
-    params: T
-    searchParams?: { [key: string]: string | string[] | undefined }
+  export interface PageParams<T = Record<string, unknown>> {
+    params: T;
+    searchParams?: { [key: string]: string | string[] | undefined };
   }
 }
