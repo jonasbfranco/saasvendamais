@@ -5,13 +5,13 @@ type ValorFormatadoProps = {
 };
 
 export default function ValorFormatado({ valor }: ValorFormatadoProps) {
-  const formatado = valor.toLocaleString("pt-BR", {
+  const formatado = valor !== null ? valor.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
     minimumFractionDigits: 2,
-  });
+  }) : "R$ 0,00";
 
-  const cor = valor < 0 ? "text-red-500" : "text-green-500";
+  const cor = valor !== null && valor < 0 ? "text-red-500" : "text-green-500";
 
   return <span className={cor}>{formatado}</span>;
 
