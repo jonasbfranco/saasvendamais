@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "receita" ALTER COLUMN "data" SET DATA TYPE TIMESTAMPTZ;

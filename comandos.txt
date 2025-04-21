@@ -1,0 +1,52 @@
+#### AJUSTAR
+- upsert no arquivo backend/cliente/RepositorioCliente.tsx (id whatsapp não deixa editar o numero do whatsapp)
+- alterar chave do whatsapp, erro ao modificar numero whatsapp
+- criar skeleton css para as paginas - https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming
+- inserir zod resolver no projeto vendas
+- criar pagina de perfil do usuario
+- ajustar as cores do menu dropdown usuario
+- nome do usuario no primeiro login - acertar
+_ paginação nas páginas (clientes, vendas, parcelas)
+- pesquisa nas páginas (clientes, vendas, parcelas)
+- acertar usuario cadastrado com active = false nao pode logar funcionando, falta direcionar para uma pagina especifica
+
+- desativar um clientes e suas compras e receitas
+- acertar repositorio venda e recebimento com prisma disconect
+- acertar o excluir em receber e vendas
+
+
+
+
+
+#### NEXTJS
+npx create-next-app@latest venda   
+
+
+
+#### PRISMA
+npm i prisma --save-dev
+npx prisma init --datasource-provider postgresql
+npx prisma migrate dev --name table-cliente                 
+npx prisma migrate dev --name table-cliente-name
+
+
+
+#### COMUNS
+npm install react-icons
+npm install date-fns date-fns-tz  // tratar data
+npm install @date-fns/tz --save // tratar data
+npm install @headlessui/react  // pesquisa no combobox
+
+
+#### bcrypt-ts
+npm i bcrypt-ts 
+
+#### Authjs
+npm install next-auth@beta
+
+
+
+
+
+
+https://youtu.be/mikoTbhH_Qg?si=12gWSMdYpsRJi0D4&t=5116

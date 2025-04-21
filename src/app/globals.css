@@ -24,3 +24,35 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.botao {
+  @apply flex justify-center items-center gap-2;
+  @apply px-10 py-4 rounded-md;
+  @apply cursor-pointer;
+}
+
+.botao.azul {
+  @apply bg-blue-500 hover:bg-blue-600;
+  @apply text-white;
+}
+
+.botao.verde {
+  @apply bg-green-500 hover:bg-green-600;
+  @apply text-white;
+}
+
+.botao.vermelho {
+  @apply bg-red-500 hover:bg-red-600;
+  @apply text-white;
+}
+
+.botao.cinza {
+  @apply bg-zinc-500 hover:bg-zinc-600;
+  @apply text-white;
+}
+
+.input {
+  @apply bg-zinc-900 px-4 py-2 rounded-md;
+  @apply border border-zinc-700;
+}
+

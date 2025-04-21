@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Cliente {
+  id        Int       @id @default(autoincrement())
+  nome      String
+  whatsapp  String?   @unique
+  cidade    String?
+  estado    String?
+  ativo     Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  Venda     Venda[]
+  Receita   Receita[]
+
+  @@map("cliente")
+}
+
+model Venda {
+  id        Int      @id @default(autoincrement())
+  descricao String?
+  valor     Float
+  data      DateTime @unique @db.Timestamptz // Salva com timezone (UTC)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  cliente   Cliente  @relation(fields: [clienteId], references: [id])
+  clienteId Int
+
+  @@map("venda")
+}
+
+model Receita {
+  id        Int      @id @default(autoincrement())
+  descricao String?
+  valor     Float
+  data      DateTime @unique @db.Timestamptz // Salva com timezone (UTC)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  cliente   Cliente  @relation(fields: [clienteId], references: [id])
+  clienteId Int
+
+  @@map("receita")
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  name       String
+  email      String   @unique
+  password   String
+  active     Boolean  @default(false)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("user")
+}
