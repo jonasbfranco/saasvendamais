@@ -26,7 +26,7 @@ import { IoWalletOutline } from "react-icons/io5";
                     salvar={salvar}
                     cancelar={() => alterarReceita(null)}
                     excluir={excluir}
-                    detalhes={() => setReceita(null)}
+                    //detalhes={() => setReceita(null)}
                 />
             ) : (
                 <>

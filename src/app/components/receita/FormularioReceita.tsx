@@ -11,7 +11,7 @@ export interface FormularioReceitaProps {
     onChange: (receita: Partial<Receita>) => void;
     salvar: () => void;
     cancelar: () => void;
-    detalhes: () => void;
+    //detalhes: () => void;
     excluir: () => void;
 }
 
