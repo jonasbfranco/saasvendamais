@@ -82,7 +82,7 @@ export default function FormularioReceita(props: FormularioReceitaProps) {
                     placeholder="Ex: 300"
                     value={props.receita?.valor ?? ""}
                     onChange={
-                        (e) => props.onChange?.({...props.receita, valor: e.target.value})
+                        (e) => props.onChange?.({...props.receita, valor: parseFloat(e.target.value)})
                     }
                 />
                 <InputTexto
