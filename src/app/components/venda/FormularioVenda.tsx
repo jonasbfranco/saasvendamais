@@ -12,7 +12,7 @@ export interface FormularioVendaProps {
     onChange: (venda: Partial<Venda>) => void;
     salvar: () => void;
     cancelar: () => void;
-    detalhes: () => void;
+    // detalhes: () => void;
     excluir: () => void;
 }
 

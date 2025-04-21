@@ -28,7 +28,7 @@ import { PiShoppingCartLight } from "react-icons/pi";
                     // cancelar={() => setCliente(null)}
                     cancelar={() => alterarVenda(null)}
                     excluir={excluir}
-                    detalhes={() => setVenda(null)}
+                    // detalhes={() => setVenda(null)}
                 />
             ) : (
                 <>
