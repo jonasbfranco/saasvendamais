@@ -13,7 +13,8 @@ export default class RepositorioCliente {
 
             const identificador = cliente.id
                 ? { id: cliente.id }
-                : { whatsapp: cliente.whatsapp };
+                // : { whatsapp: cliente.whatsapp };
+                : { whatsapp: cliente.whatsapp ?? "" };
 
             const { id, ...dadosCliente } = cliente;
 
