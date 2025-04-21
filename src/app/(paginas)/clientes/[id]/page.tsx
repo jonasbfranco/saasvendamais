@@ -4,14 +4,13 @@ import Backend from "@/backend";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
-type Params = {
-  params: {
-    id: string;
-  };
-};
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
 
-export default async function PaginaDetalhes({ params }: Params) {
-  const cliente = await Backend.clientes.obterPorId(params.id);
+export default async function PaginaDetalhes({ params }: PageProps) {
+  const { id } = await params;
+  const cliente = await Backend.clientes.obterPorId(id);
   if (!cliente) return notFound();
 
   const vendas = await Backend.vendas.obterVendasClientes(String(cliente.id));
