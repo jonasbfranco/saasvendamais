@@ -24,7 +24,7 @@ export default function useVendas() {
     async function excluir() {
         //Excluir do banco de dados
         if (!venda || !venda.id) return;
-        await Backend.vendas.excluir(venda.id)
+        await Backend.vendas.excluir(String(venda.id))
         const vendas = await Backend.vendas.obter()
         setVendas(vendas)
         setVenda(null)
