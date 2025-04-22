@@ -44,6 +44,9 @@ export default class RepositorioVenda {
             where: identificador,
             update: dadosTratados,
             create: dadosTratados,
+            include: {
+                cliente: true, // <-- Adiciona o relacionamento!
+            }
         });
     }
 
@@ -63,7 +66,15 @@ export default class RepositorioVenda {
     static async obterPorId(id: string): Promise<Venda> {
         const venda = await this.db.venda.findUnique({
             where: { id: parseInt(id) },
+            include: {
+                cliente: true,
+            },
         });
+
+
+        if (!venda) {
+            throw new Error("Venda não encontrada.");
+        }
 
         return venda as Venda;
     }

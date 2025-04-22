@@ -38,7 +38,7 @@ export default class RepositorioReceita {
             create: dadosTratados,
             include: {
                 cliente: true, // <-- Adiciona o relacionamento!
-              }
+            }
         });
     }
 
@@ -84,20 +84,20 @@ export default class RepositorioReceita {
 
 
     static async obterReceitasClientes(id: string): Promise<Receita[]> {
-            const receita = await this.db.receita.findMany({
-                include: {
-                    cliente: true,
-                  },
-                where: {
-                    clienteId: parseInt(id),
+        const receita = await this.db.receita.findMany({
+            include: {
+                cliente: true,
                 },
-                orderBy: {
-                    data: 'asc',
-                }
-            });
-    
-            return receita as Receita[];
-        }
+            where: {
+                clienteId: parseInt(id),
+            },
+            orderBy: {
+                data: 'asc',
+            }
+        });
+
+        return receita as Receita[];
+    }
 
 
 }
