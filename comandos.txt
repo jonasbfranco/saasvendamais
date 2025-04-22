@@ -29,6 +29,11 @@ npx prisma init --datasource-provider postgresql
 npx prisma migrate dev --name table-cliente                 
 npx prisma migrate dev --name table-cliente-name
 
+npx prisma migrate deploy
+npx prisma db push
+npx prisma studio
+
+
 
 
 #### COMUNS
